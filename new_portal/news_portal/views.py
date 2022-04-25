@@ -6,6 +6,7 @@ from django.views.generic import *
 from .models import *
 from .filters import News_filter
 from .forms import PostForm
+from django.utils.translation import gettext as _
 
 
 class PostList(ListView):

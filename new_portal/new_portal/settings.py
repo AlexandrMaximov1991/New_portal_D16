@@ -67,6 +67,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'new_portal.urls'
 
+SITE_ROOT = os.path.dirname(os.path.realpath(__name__))
+LOCALE_PATHS = (os.path.join(SITE_ROOT, 'locale'), )
+# LOCALE_PATHS = [
+#     os.path.join(BASE_DIR, 'locale')
+# ]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -94,6 +100,10 @@ AUTHENTICATION_BACKENDS = [
 
 WSGI_APPLICATION = 'new_portal.wsgi.application'
 
+LANGUAGES = [
+    ('en', 'English'),
+    ('ru', 'русский')
+]
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -125,7 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
@@ -218,7 +228,7 @@ LOGGING = {
             '()': 'django.utils.log.RequireDebugFalse',
         },
     },
-    # --Блок вывода сообщений в консоль для опр. уровней
+    # --Блок вывода сообщений в консоль для определения уровней
     'handlers': {
         'console_debug': {
             'level': 'DEBUG',
@@ -272,7 +282,7 @@ LOGGING = {
     'loggers': {
         # Регистратор django
         'django': {
-            'handlers': ['console_debug', 'console_warning', 'console_error', 'file_general'],
+            'handlers': ['file_general', 'console_debug', 'console_warning', 'console_error'],
             'level': 'DEBUG',
             'propagate': 'True',
         },
