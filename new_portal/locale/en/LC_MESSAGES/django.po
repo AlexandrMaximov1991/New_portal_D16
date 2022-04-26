@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-26 15:17+0300\n"
+"POT-Creation-Date: 2022-04-26 18:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\new_portal\settings.py:107
+msgid "English"
+msgstr ""
+
+#: .\new_portal\settings.py:108
+msgid "русский"
+msgstr ""
 
 #: .\news_portal\views.py:100
 msgid "Hello World"
@@ -32,7 +42,7 @@ msgstr "News and articles"
 
 #: .\templates\flatpages\default.html:33
 msgid "Личный кабинет пользователя"
-msgstr ""
+msgstr "User account"
 
 #: .\templates\flatpages\default.html:34
 msgid "Поиск"
@@ -45,6 +55,28 @@ msgstr "Admin panel"
 #: .\templates\flatpages\default.html:37
 msgid "Выход"
 msgstr "Exit"
+
+#: .\templates\new.html:16
+#, fuzzy
+#| msgid "Новости и статьи"
+msgid "Заголовок статьи"
+msgstr "News and articles"
+
+#: .\templates\new.html:19
+msgid "Категория"
+msgstr "Categories"
+
+#: .\templates\new.html:22
+msgid "Дата публикации"
+msgstr "Date create post"
+
+#: .\templates\new.html:25
+msgid "Статья"
+msgstr "Text"
+
+#: .\templates\new.html:28
+msgid "Рейтинг"
+msgstr "Rating"
 
 #: .\templates\news.html:12
 msgid "Все новости"
@@ -66,5 +98,54 @@ msgstr "Add new post"
 msgid "Новостей нет!"
 msgstr "No news!"
 
-#~ msgid "User account"
-#~ msgstr "Личный кабинет пользователя"
+#: .\templates\post_create.html:8
+msgid "Новость"
+msgstr "New"
+
+#: .\templates\post_delete.html:9
+msgid "Вы действительно хотите удалить данную публикацию?"
+msgstr "Are you sure you want to delete this post?"
+
+#: .\templates\post_detail.html:9
+msgid "Название публикации"
+msgstr "Title post"
+
+#: .\templates\post_detail.html:14
+msgid "Дата публикации:"
+msgstr "Date create post"
+
+#: .\templates\post_detail.html:22
+msgid "Вы можете подписаться на новости категории:"
+msgstr "You can subscribe to category news:"
+
+#: .\templates\post_detail.html:31
+msgid ""
+"Ваши текущие подписки (если вы хотите отписаться, то просто нажмите на "
+"название подписки)"
+msgstr ""
+"Your current subscriptions (if you want to unsubscribe, just click on "
+"subscription name)"
+
+#: .\templates\protect\index.html:5
+msgid "Страница авторизованного пользователя"
+msgstr "User account"
+
+#: .\templates\protect\index.html:6
+msgid "Здесь может содержаться персональная информация для каждого пользователя"
+msgstr "This may contain personal information for each user"
+
+#: .\templates\protect\index.html:9
+msgid "Стать автором! "
+msgstr "Become an author!"
+
+#: .\templates\protect\index.html:11
+msgid "Не хочу быть автором!"
+msgstr "I don't want to be an author!"
+
+#: .\templates\protect\index.html:15
+msgid "Выйти"
+msgstr "Exit"
+
+#: .\templates\search.html:16
+msgid "Название:"
+msgstr "Name"

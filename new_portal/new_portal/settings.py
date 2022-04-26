@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -58,6 +59,7 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -102,8 +104,8 @@ AUTHENTICATION_BACKENDS = [
 WSGI_APPLICATION = 'new_portal.wsgi.application'
 
 LANGUAGES = [
-    ('en', 'English'),
-    ('ru', 'русский')
+    ('en', _('English')),
+    ('ru', _('русский'))
 ]
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

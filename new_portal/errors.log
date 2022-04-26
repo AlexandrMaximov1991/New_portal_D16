@@ -414,3 +414,228 @@ Traceback (most recent call last):
     raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
 django.template.exceptions.TemplateSyntaxError: Invalid filter: 'censor'
 2022-04-26 15:41:47,268 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\servers\basehttp.py None     "GET /news/search/ HTTP/1.1" 500 191922
+2022-04-26 16:31:01,213 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.OperationalError'>, OperationalError('no such column: news_portal_post.postTitle_en_us'), <traceback object at 0x000002505DA191C0>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 416, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: news_portal_post.postTitle_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\defaulttags.py", line 294, in render
+    if match:
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\query.py", line 284, in __bool__
+    self._fetch_all()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\query.py", line 1354, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 416, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: news_portal_post.postTitle_en_us
+2022-04-26 16:31:01,315 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\servers\basehttp.py None     "GET /news/ HTTP/1.1" 500 208921
+2022-04-26 17:07:38,084 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.OperationalError'>, OperationalError('no such column: news_portal_post.pubData_en'), <traceback object at 0x000001647BD8E800>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 416, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: news_portal_post.pubData_en
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\defaulttags.py", line 294, in render
+    if match:
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\query.py", line 284, in __bool__
+    self._fetch_all()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\query.py", line 1354, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 416, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: news_portal_post.pubData_en
+2022-04-26 17:07:38,129 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\servers\basehttp.py None     "GET /news/ HTTP/1.1" 500 211185
+2022-04-26 17:08:10,354 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\utils\log.py (<class 'django.db.utils.OperationalError'>, OperationalError('no such column: news_portal_post.postRating_en'), <traceback object at 0x00000161C645F380>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 416, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: news_portal_post.postRating_en
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\defaulttags.py", line 294, in render
+    if match:
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\query.py", line 284, in __bool__
+    self._fetch_all()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\query.py", line 1354, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 416, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: news_portal_post.postRating_en
+2022-04-26 17:08:10,408 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\servers\basehttp.py None     "GET /news/ HTTP/1.1" 500 210198
