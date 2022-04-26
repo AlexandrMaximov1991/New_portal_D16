@@ -8,9 +8,8 @@ News
 
 
 {% block content %}
- {{ string }} <!-- Это уже знакомая нам переменная, просто засунули её в шаблон -->
-    {% trans "Check out my new cool translation" %}! <!-- Переводим строку -->
-<h1>Все новости</h1>
+
+<h1>{% trans "Все новости" %}</h1>
 
     {% if news %}
     <table>
@@ -29,8 +28,8 @@ News
             <tr>
             <td>
                <a href="{% url 'post_detail' new.id %}">{{ new.postTitle|one }}</a>
-                <a href="{% url 'post_update' new.id %}"><u>Редактировать</u></a>
-                  <a href="{% url 'post_delete' new.id %}"><u> Удалить </u></a>
+                <a href="{% url 'post_update' new.id %}"><u>{% trans "Редактировать" %}</u></a>
+                  <a href="{% url 'post_delete' new.id %}"><u> {% trans "Удалить" %} </u></a>
             </td>
             <td>
                 {{ new.pubData|date:'d M Y, H:m' }}
@@ -41,7 +40,7 @@ News
         </tr>
         {% endfor %}
     </table>
-<a href="{% url 'post_create' %}">Добавить новую публикацию</a> <br>
+<a href="{% url 'post_create' %}">{% trans "Добавить новую публикацию" %}</a> <br>
 {% if is_paginated %}
 
     <!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
@@ -67,7 +66,7 @@ News
 
 {% endif %}
     {% else %}
-    <h2> Новостей нет! </h2>
+    <h2> {% trans "Новостей нет!" %} </h2>
     {% endif%}
 
 

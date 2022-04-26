@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'news_portal.apps.NewsPortalConfig',
     'django_apscheduler',
+    'modeltranslation',
 
     'django.contrib.sites',
     'django.contrib.flatpages',
