@@ -1,16 +1,17 @@
 {% extends 'flatpages/default.html' %} 
+{% load i18n %}
 
 {% block title %}
 News
 {% endblock title %}
 {% load censor %}
 {% block content %}
- <h3>Название публикации</h3>
+ <h3>{% trans "Название публикации" %}</h3>
     <p>{{  post.postTitle|one }}</p>
 
 <h3>Статья:</h3>
 <p>{{ post.postText|one }}</p>
-<h3>Дата публикации:</h3>
+<h3>{% trans "Дата публикации:" %}</h3>
 <p>{{ post.pubData }}</p>
     <p>Автор: <b>{{ post.PostAuthor }}</b></p>
 
@@ -18,7 +19,7 @@ News
 
 {% if request.user.is_authenticated %}
         <p>
-            Вы можете подписаться на новости категории:
+            {% trans "Вы можете подписаться на новости категории:"%}
             {% for category in post.postCategory.all %}
                 {% if not category in user_category %}
                     <a href="{% url 'subscribe' category.pk %}"><br>{{ category.categoryname }}</a>
@@ -27,7 +28,7 @@ News
                 {% endif %}
             {% endfor %}
 
-          <h6>Ваши текущие подписки (если вы хотите отписаться, то просто нажмите на название подписки):</h6>
+          <h6>{% trans "Ваши текущие подписки (если вы хотите отписаться, то просто нажмите на название подписки)" %}:</h6>
              {% for category in post.postCategory.all %}
              {% if category in user_category %}
             <a href="{% url 'subscribe' category.pk %}"><br>{{ category.categoryname }}</a>

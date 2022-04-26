@@ -1,5 +1,5 @@
 {% extends 'flatpages/default.html' %}
-
+{% load i18n %}
 {% block title %}
 News
 {% endblock title %}
@@ -13,13 +13,13 @@ News
 <table>
     <thead>
     <th>
-    <h3>Название:</h3>
+    <h3>{% trans "Название:" %}</h3>
     </th>
     </thead>
       {% for new in filter.qs %}
     <tr>
     <td>
-        <a href="{% url 'post_detail' new.id %}">{{ new.postTitle|censor }}</a>
+        <a href="{% url 'post_detail' new.id %}">{{ new.postTitle|one }}</a>
     </td>
 </tr>
     {% endfor %}

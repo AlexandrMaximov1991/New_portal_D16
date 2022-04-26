@@ -1,11 +1,12 @@
 {% extends 'flatpages/default.html' %}
+{% load i18n %}
 
 {% block title %}
 News
 {% endblock title %}
 {% load censor %}
 {% block content %}
-<h2>Вы действительно хотите удалить данную публикацию?</h2>
+<h2>{% trans "Вы действительно хотите удалить данную публикацию?" %}</h2>
 <table>
         <tr>
             <td>
@@ -20,13 +21,13 @@ News
             </tr>
             <tr>
             <td>
-                {{ post.postTitle|censor }}
+                {{ post.postTitle|one }}
             </td>
             <td>
                 {{ post.pubData|date:'d M Y, H:m' }}
             </td>
             <td>
-                {{ post.postText|censor }}
+                {{ post.postText|one }}
             </td>
         </tr>
           </table>
