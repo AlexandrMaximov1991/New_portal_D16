@@ -18,3 +18,151 @@ Traceback (most recent call last):
     eol_message = message.replace('\r\n', '\n').replace('\r', '\n')
 AttributeError: 'list' object has no attribute 'replace'
 2022-04-25 17:42:28,005 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\servers\basehttp.py None     "GET /news/123 HTTP/1.1" 500 97292
+2022-04-26 12:57:42,626 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 72: 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x000001FADC2C78C0>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 500, in parse
+    compile_func = self.tags[command]
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\engine.py", line 163, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\engine.py", line 145, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 284, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 502, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 561, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 72: 'endblock'. Did you forget to register or load this tag?
+2022-04-26 12:57:42,658 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\servers\basehttp.py None     "GET /news/ HTTP/1.1" 500 155546
+2022-04-26 13:03:29,600 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError('Could not parse the remainder: \' "flatpage.content"\' from \'trans "flatpage.content"\''), <traceback object at 0x000001FADC40BC80>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 130, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 127, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 106, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\engine.py", line 145, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 222, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 479, in parse
+    raise self.error(token, e)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 477, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 593, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 692, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' "flatpage.content"' from 'trans "flatpage.content"'
+2022-04-26 13:03:29,625 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\servers\basehttp.py None     "GET /news/ HTTP/1.1" 500 220821
+2022-04-26 13:04:48,862 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 11: 'trans', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x000001FADC75C940>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 500, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\engine.py", line 163, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\engine.py", line 145, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 284, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 508, in parse
+    raise self.error(token, e)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 506, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\loader_tags.py", line 222, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 502, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\template\base.py", line 552, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'trans', expected 'endblock'. Did you forget to register or load this tag?
+2022-04-26 13:04:48,905 ERROR    C:\Users\maxim\PycharmProjects\django\venv\lib\site-packages\django\core\servers\basehttp.py None     "GET /news/ HTTP/1.1" 500 205096

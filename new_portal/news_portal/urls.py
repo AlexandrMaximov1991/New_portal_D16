@@ -3,7 +3,6 @@ from .views import PostList, PostDetailView, PostCreateView, PostDeleteView, Pos
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),  # подключаем встроенные эндопинты для работы с локализацией
-
     path('', PostList.as_view()),
     path('<int:pk>', PostDetailView.as_view(), name='post_detail'),
     path('create/', PostCreateView.as_view(), name='post_create'),

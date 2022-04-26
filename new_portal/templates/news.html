@@ -1,4 +1,5 @@
 {% extends 'flatpages/default.html' %}
+{% load i18n %}
 
 {% block title %}
 News
@@ -7,6 +8,8 @@ News
 
 
 {% block content %}
+ {{ string }} <!-- Это уже знакомая нам переменная, просто засунули её в шаблон -->
+    {% trans "Check out my new cool translation" %}! <!-- Переводим строку -->
 <h1>Все новости</h1>
 
     {% if news %}

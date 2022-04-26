@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.models import Group
+from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import *
 from .models import *
@@ -94,4 +95,8 @@ def subscribe(request, **kwargs):
     return redirect(request.META.get('HTTP_REFERER', '/'))
 
 
+class Index(View):
+    def get(self, request):
+        string = _('Hello World')
 
+        return HttpResponse(string)
