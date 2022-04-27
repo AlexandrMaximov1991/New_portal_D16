@@ -116,3 +116,10 @@ class Index(View):
     def post(self, request):
         request.session['django_timezone'] = request.POST['timezone']
         return redirect('/')
+
+# def set_timezone(request):
+#     if request.method == 'POST':
+#         request.session['django_timezone'] = request.POST['timezone']
+#         return redirect('/')
+#     else:
+#         return render(request, 'news.html', {'timezones': pytz.common_timezones})
