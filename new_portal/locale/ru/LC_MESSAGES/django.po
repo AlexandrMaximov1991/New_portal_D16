@@ -68,7 +68,7 @@ msgstr ""
 
 #: .\templates\new.html:25
 msgid "Статья"
-msgstr ""
+msgstr "Post"
 
 #: .\templates\new.html:28
 msgid "Рейтинг"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: .\templates\news.html:12
 msgid "Все новости"
-msgstr "All news"
+msgstr ""
 
 #: .\templates\news.html:31
 msgid "Редактировать"
